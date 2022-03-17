@@ -1,0 +1,220 @@
+:root{
+    --flippingV: 0deg;
+    --flippingH: 90deg;
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p{
+    direction: rtl;
+    text-align: justify;
+}
+body{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.mainContainer{
+    width: 9cm;
+    height: 22.5cm;
+    border: 1px solid black;
+    perspective: 600px;
+    perspective-origin: center;
+    transform-style: preserve-3d;
+    position: relative;
+    transform: rotateY(var(--flippingV));
+    transition: transform .5s;
+}
+/* .mainContainer:hover{
+    transform: rotateY(180deg);
+} */
+
+.container{
+    background-color: white;
+    position: absolute;
+    z-index: 3;
+    backface-visibility: hidden;
+    width: 9cm;
+    height: 22.5cm;
+    border: 1px solid black;
+    padding: 0.5cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1cm;
+    transition: transform .5s linear;
+}
+.container section{
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid red; */
+
+}
+.container section:first-of-type .img{
+    width: 100%;
+    height: 100%;
+    background: url(./assets/najma.jpg) no-repeat center;
+    background-size: cover;
+}
+.container section:last-of-type{
+    display: flex;
+    flex-direction: column;
+    gap: .2cm;
+}
+.container section article{
+    /* border: 1px solid green; */
+    height: 50%;
+    width: 100%;
+    display: flex;
+    gap: .2cm;
+}
+.container section article .img{
+    /* border: 1px solid blue; */
+    width: 100%;
+}
+.container section article:first-of-type .img{
+    background: url(./assets/Drapeau_Salé.png) no-repeat center;
+    background-size: cover;
+}
+.container section article:last-of-type .img{
+    background: url(./assets/Monuments_de_Salé.png) no-repeat center;
+    background-size: cover;
+}
+.container section article p{
+    /* border: 1px solid purple; */
+    width: 100%;
+}
+.container section article:first-of-type p{
+    font-size: 17px;
+}
+.container section article:last-of-type p{
+    font-size: 12px;
+}
+
+.container1{
+    background-color: white;
+    position: absolute;
+    z-index: 2;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    width: 9cm;
+    height: 22.5cm;
+    border: 1px solid black;
+    padding: 0.5cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1cm;
+}
+.container1 section{
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid red; */
+
+}
+.container1 section:first-of-type{
+    display: flex;
+    flex-direction: column;
+}
+.container1 section:first-of-type h3{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.container1 section:first-of-type .content{
+    border: 1px solid transparent;
+    height: 60%;
+    width: 100%;
+}
+.container1 section:first-of-type .content .img{
+    /* border: 1px solid blue; */
+    width: 40%;
+    aspect-ratio: 1/1;
+    margin-left: 10px;
+    float: right;
+    background: url(./assets/chellah1.jpg) no-repeat center;
+    background-size: cover;
+}
+.container1 section:first-of-type .content p{
+    font-size: 17px;
+    margin: 5px;
+}
+.container1 section:first-of-type > .img{
+    width: 100%;
+    height: 40%;
+    /* border: 1px solid black; */
+    background: url(./assets/chellah2.jpg) no-repeat center;
+    background-size: cover;
+}
+.container1 section:last-of-type{
+    display: flex;
+    flex-direction: column;
+}
+.container1 section:last-of-type h3{
+    text-align: center;
+    margin: 10px;
+}
+.container1 section:last-of-type .img{
+    background: url(./assets/Hassan_Tower_01.jpg) no-repeat center ;
+    background-size: cover;
+    width: 100%;
+    height: 50%;
+    margin-bottom: 10px;
+}
+.container1 section:last-of-type p {
+    font-size: 21px;
+}
+
+.container2{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+    transform: rotateZ(var(--flippingH)) /* 180deg */rotateX(180deg) translate(-50%,-50%);
+    z-index: 1;
+    backface-visibility: hidden;
+    width: 22.5cm;
+    height: 9cm;
+    border: 1px solid black;
+    padding: 0.5cm;
+    display: flex;
+    justify-content: space-between;
+    gap: 10cm;
+    transition: transform .5s;
+}
+.container2 section{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    text-align: center;
+}
+.container2 section:first-of-type .img{
+    width: 100%;
+    height: 50%;
+    background: url(./assets/knawa.jpg) no-repeat center;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.container2 section:first-of-type p{
+    height: 50%;
+    font-size: 13px;
+}
+.container2 section:last-of-type .img{
+    width: 100%;
+    height: 50%;
+    background: url(./assets/babkhmiss.jpg) no-repeat center;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.container2 section:last-of-type p{
+    height: 50%;
+    font-size: 16px;
+}
